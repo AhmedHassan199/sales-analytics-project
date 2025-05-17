@@ -1,0 +1,29 @@
+.input-notes {
+    background-color: #d95d1314;
+    padding: 15px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border: 1px solid #e99e7261;
+}
+
+.input-notes p{
+    margin-bottom: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.input-notes span{
+    color: #d95d13;
+}
+
+
+.input-notes i{
+    font-size: 17px;
+    color: #d95d13;
+}
