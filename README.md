@@ -1,67 +1,175 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# **Advanced Real-Time Sales Analytics System**
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Welcome to the **Real-Time Sales Analytics System**, a cutting-edge platform designed to empower businesses with real-time insights and AI-powered recommendations to boost revenue. This system offers seamless management and analysis of sales data, featuring powerful APIs, real-time reporting, AI integration, and external weather-based adjustments for dynamic pricing.
 
-## About Laravel
+## Key Features
+- **Real-Time Order Management**: Capture, track, and manage orders instantly.
+- **Comprehensive Sales Insights**: Visualize total revenue, top-selling products, and instant changes in sales.
+- **AI-Powered Product Recommendations**: Leverage AI to generate strategic product promotions based on sales data.
+- **Weather-Driven Dynamic Pricing**: Adjust promotions and pricing based on real-time weather data.
+- **RealTime Integration**: Get real-time updates and notifications directly to your front-end.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Design Patterns Utilized
+- **Service Repository Design Pattern**: To ensure maintainable, clean, and modular code.
+- **Form Requests**: For secure and validated input handling.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Prerequisites
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Ensure you have the following tools installed before getting started:
 
-## Learning Laravel
+- **PHP** >= 8.2
+- **Composer** (for managing PHP dependencies)
+- **Laravel** >= 10 (backend framework)
+- **MySQL** (database management system)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Setup Instructions
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. **Clone the Repository:**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    ```bash
+    git clone https://github.com/AhmedHassan199/sales-analytics-project.git
+    sales-analytics-project
+    ```
 
-## Laravel Sponsors
+2. **Install Dependencies:**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    ```bash
+    composer install
+    ```
 
-### Premium Partners
+    This installs the necessary PHP packages listed in the `composer.json`.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+3. **Configure Your Environment:**
 
-## Contributing
+    - Duplicate `.env.example` and rename it to `.env`.
+    - Set up your database configuration in the `.env` file, updating the `DB_*` values to match your MySQL settings.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Generate Application Key:**
 
-## Code of Conduct
+    ```bash
+    php artisan key:generate
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    This generates the app key for encrypted sessions and data security.
 
-## Security Vulnerabilities
+5. **Run Migrations and Seeders:**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    ```bash
+    php artisan migrate --seed
+    ```
 
-## License
+    This will create the database tables and populate them with initial data, including the default admin user.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# sales-analytics
+6. **Start the Development Server:**
+
+    ```bash
+    php artisan serve
+    ```
+
+    Your server will start running on `http://127.0.0.1:8000`.
+
+---
+
+## **API Endpoints**
+
+### **Orders**
+
+- `GET /orders`  
+  Retrieve a list of all orders.
+
+- `GET /orders/create`  
+  Retrieve data needed to create a new order (e.g., form options).
+
+- `POST /orders`  
+  Create a new order .
+
+- `DELETE /orders/{id}`  
+   Delete an order by its ID.
+
+### **Analytics**
+- **GET /analytics**: 
+Retrieve live sales data and insights:
+  - `total_revenue`: Total revenue from all orders.
+  - `top_products`: Top-selling products (by quantity or revenue).
+  - `revenue_changes_last_minute`: Sales fluctuations within the last minute.
+  - `order_count_last_minute`: Number of orders in the last minute.
+
+### **Recommendations**
+- **GET /ai_recommendations**: Get AI-powered suggestions on which products to promote based on recent sales data.
+- **GET /recommendations-weather**: Add logic to suggest dynamic pricing based on weather or seasonality.
+
+### **Real-Time Reporting**
+- **Real Yime Integration**: Subscribe to real-time updates for:
+  - New orders
+  - delete order
+  - Updated analytics
+
+---
+
+## **Entity-Relationship Diagram (ERD)**
+
+### **Users**
+- `id` (Primary Key)
+- `name` (String)
+- `email` (String, unique)
+- `email_verified_at` (Timestamp, nullable)
+- `password` (String)
+- `remember_token` (String, nullable)
+- `created_at` (Timestamp)
+- `updated_at` (Timestamp)
+
+### **Products**
+- `id` (Primary Key)
+- `name` (String, required)
+- `price` (Decimal, required)
+- `description` (Text)
+- `created_at` (Timestamp)
+- `updated_at` (Timestamp)
+
+### **Orders**
+- `id` (Primary Key)
+- `product_id` (Foreign Key referencing `products.id`)
+- `quantity` (Integer)
+- `total_price` (Decimal)
+- `created_at` (Timestamp)
+- `updated_at` (Timestamp)
+
+## Entity Relationships
+### Products ↔️ Orders
+- One **Product** can have many **Orders**
+- One **Order** belongs to one **Product**
+
+## **External API Integrations**
+
+1. **OpenWeather API Key** (For Weather Integration)
+    - Ensure you have a valid OpenWeather API key to enable dynamic product recommendations based on current weather.
+
+2. **Gemini API Key** (For AI Recommendations)
+    - AI-assisted product promotion suggestions are powered by **Gemini**. You will need an API key for access.
+
+---
+# Order Feature Test
+
+## Test Description
+
+This test verifies that:
+- An order is created successfully via the `/orders` POST endpoint.
+- The `DashboardUpdated` event is dispatched after order creation.
+
+## Prerequisites
+
+Make sure your test database is migrated and seeded before running the test:
+
+```bash
+php artisan migrate --env=testing
+php artisan db:seed --env=testing
+then run 
+```bash
+php artisan test --filter=OrderTest
+
+## **AI-Assisted Code Generation**
+
+Parts of this project were generated or assisted by AI , which helped generate API structure and code for recommendations. However, all database logic, API integrations, and real-time reporting were implemented manually to ensure control over the core functionality.
+
+---
+
