@@ -21,7 +21,7 @@ class RecommendationService
 
     public function getAIRecommendations($salesData)
     {
-        $apiKey = 'AIzaSyDzaaaSCya3VL_yrMA5vOuCSkHDcC3xqG4'; // استبدل بالمفتاح الصحيح
+        $apiKey = env('GEMINI_API_KEY'); // استبدل بالمفتاح الصحيح
 
         $prompt = "Given this sales data, which products should we promote for higher revenue? " . json_encode($salesData);
 
