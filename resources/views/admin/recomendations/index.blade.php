@@ -23,7 +23,6 @@
                     <div id="recommendations" class="mt-4">
                         <h3>Product Promotion Suggestions:</h3>
                         <ul id="recommendations-list">
-                            <!-- Recommendations will be appended here -->
                         </ul>
                     </div>
                 </div>

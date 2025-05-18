@@ -11,13 +11,18 @@ class OrderRepository
         return DB::table('orders')->insert($data);
     }
 
-    public function getAllOrders()
-    {
-        return DB::table('orders')
-            ->join('products', 'orders.product_id', '=', 'products.id')
-            ->select('orders.*', 'products.name as product_name', 'products.description')
-            ->get();
-    }
+        public function getAllOrders()
+        {
+            return DB::table('orders')
+                ->join('products', 'orders.product_id', '=', 'products.id')
+                ->select([
+                    'orders.*',
+                    'products.name as product_name',
+                    'products.description',
+                ])
+                ->paginate(1); 
+        }
+
 
     public function deleteOrder($id)
     {

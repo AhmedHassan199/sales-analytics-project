@@ -14,7 +14,7 @@ class RecommendationController extends Controller
         $this->recommendationService = $recommendationService;
     }
 
-    public function getRecommendations()
+    public function getAiRecommendations()
     {
         $salesData = $this->recommendationService->getSalesData();
         $recommendations = $this->recommendationService->getAIRecommendations($salesData);
