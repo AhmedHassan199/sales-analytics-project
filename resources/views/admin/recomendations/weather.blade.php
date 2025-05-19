@@ -33,22 +33,54 @@
                         <h5 class="text-success">💰 Dynamic Pricing Suggestions:</h5>
                         <p>{{ $dynamicPricing }}</p>
                     </div>
+
+                    @if (!empty($showForm) && $showForm === true)
+                        <form method="POST" action="{{ route('updatePrices') }}">
+                            @csrf
+                            <input type="hidden" name="category" value="{{ $categoryToUpdate }}">
+
+                            <div class="mb-3">
+                                <label for="percentIncrease" class="form-label">
+                                    Increase Price Percentage 
+                                </label>
+                                <input type="number" class="form-control" id="percentIncrease" name="percent" step="0.01" min="0" max="100" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Update Prices</button>
+                        </form>
+                    @endif
                 @endif
 
                 {{-- Search Form --}}
-               <form method="GET" action="{{ route('weather') }}">
-                <div class="input-group">
-                    <select name="location" class="form-select">
-                        <option value="">Choose a city</option>
-                        @foreach($cities as $city)
-                            <option value="{{ $city }}" {{ request('location') == $city ? 'selected' : '' }}>
-                                {{ $city }}
-                            </option>
-                        @endforeach
-                    </select>
-                    <button type="submit" class="btn btn-primary">🔍 Search</button>
-                </div>
-             </form>
+                <form method="GET" action="{{ route('weather') }}">
+                    <div class="input-group mt-4">
+                        <select name="location" class="form-select">
+                            <option value="">Choose a city</option>
+                            @foreach($cities as $city)
+                                <option value="{{ $city }}" {{ request('location') == $city ? 'selected' : '' }}>
+                                    {{ $city }}
+                                </option>
+                            @endforeach
+                        </select>
+                        <button type="submit" class="btn btn-primary">🔍 Search</button>
+                    </div>
+                </form>
+
+                @if(session('success'))
+                    <div class="alert alert-success mt-3">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if ($errors->any())
+                    <div class="alert alert-danger mt-3">
+                        <ul class="mb-0">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
             </div>
         </div>

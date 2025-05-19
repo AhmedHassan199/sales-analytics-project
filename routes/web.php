@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\AiRecommendationController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RecommendationController;
 use App\Http\Controllers\WeatherRecommendationController;
 use Illuminate\Support\Facades\Route;
@@ -40,3 +41,9 @@ Route::delete('/orders/{id}', [OrderController::class, 'destroy'])->name('order.
 ////////////////////////////////////////////////////////////////////////////////
 // dashboard
 Route::get('/analytics', [DashboardController::class, 'index'])->name('dashboard.index');
+
+// product
+Route::post('/admin/update-prices', [ProductController::class, 'updatePrices'])->name('updatePrices');
+Route::get('/admin/products', [ProductController::class, 'index'])->name('products.index');
+
+

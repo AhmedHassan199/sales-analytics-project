@@ -75,9 +75,9 @@ class RecommendationService
 
     private function getWeatherBasedPromotions(float $temperature): array
     {
-        if ($temperature > 29) {
+        if ($temperature > 30) {
             return ["Promote cold drinks and ice cream.", "Increase prices for cold drinks by 10%."];
-        } elseif ($temperature < 15) {
+        } elseif ($temperature < 20) {
             return ["Promote hot drinks and soups.", "Increase prices for hot drinks by 15%."];
         } else {
             return ["Promote balanced meal options.", "Keep prices stable."];
