@@ -166,7 +166,7 @@ php artisan db:seed --env=testing
 then run 
 ```bash
 php artisan test --filter=OrderTest
-
+```
 ## **AI-Assisted Code Generation**
 
 Parts of this project were generated or assisted by AI , which helped generate API structure and code for recommendations. However, all database logic, API integrations, and real-time reporting were implemented manually to ensure control over the core functionality.
