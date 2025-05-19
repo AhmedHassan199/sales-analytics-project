@@ -7,10 +7,14 @@ use App\Models\Product;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Event;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+
 
 class OrderTest extends TestCase
 {
-    use RefreshDatabase;
+    // use RefreshDatabase;
+    use DatabaseTransactions;
+
 
     /** @test */
     public function it_creates_an_order_and_dispatches_dashboard_updated_event()

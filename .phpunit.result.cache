@@ -1,1 +1,1 @@
-{"version":1,"defects":{"Tests\\Feature\\OrderTest::it_creates_an_order_and_dispatches_dashboard_updated_event":8},"times":{"Tests\\Feature\\OrderTest::it_creates_an_order_and_dispatches_dashboard_updated_event":0.067}}
+{"version":1,"defects":{"Tests\\Feature\\OrderTest::it_creates_an_order_and_dispatches_dashboard_updated_event":8},"times":{"Tests\\Feature\\OrderTest::it_creates_an_order_and_dispatches_dashboard_updated_event":0.145}}
