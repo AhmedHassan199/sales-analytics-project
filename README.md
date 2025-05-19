@@ -28,7 +28,7 @@ Ensure you have the following tools installed before getting started:
 
     ```bash
     git clone https://github.com/AhmedHassan199/sales-analytics-project.git
-    sales-analytics-project
+     cd sales-analytics-project
     ```
 
 2. **Install Dependencies:**
