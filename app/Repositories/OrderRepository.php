@@ -20,7 +20,7 @@ class OrderRepository
                     'products.name as product_name',
                     'products.description',
                 ])
-                ->paginate(1); 
+                ->paginate(10); 
         }
 
 
